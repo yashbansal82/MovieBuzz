@@ -5,21 +5,20 @@ import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 dotenv.config({
-  path:".env"
-})
-
+  path: ".env",
+});
 
 databaseConnection();
 
 const app = express();
 //middlewares
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-  origin:"http://localhost:3000",
-  credentials:true
-}
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+};
 app.use(cors(corsOptions));
 
 //api
