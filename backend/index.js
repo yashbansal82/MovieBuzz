@@ -19,14 +19,14 @@ const corsOptions = {
   origin: process.env.FRONTEND_URL,
   credentials: true,
 };
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 //api
 app.get("/", (req, res) => {
   console.log("home route");
   res.json("get request");
 });
-app.use("/", userRoute);
+app.use("/api", userRoute);
 //http://localhost:8080/api/v1/user/register
 
 app.listen(process.env.PORT, () => {
