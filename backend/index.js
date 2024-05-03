@@ -22,6 +22,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //api
+app.get("/", (req, res) => {
+  console.log("home route");
+  res.json("get request");
+});
 app.use("/api/v1/user", userRoute);
 //http://localhost:8080/api/v1/user/register
 
