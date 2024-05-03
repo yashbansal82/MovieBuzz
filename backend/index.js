@@ -19,10 +19,9 @@ const corsOptions = {
   origin: process.env.FRONTEND_URL,
   credentials: true,
 };
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 //api
-
 
 app.use("/", userRoute);
 //http://localhost:8080/api/v1/user/register
