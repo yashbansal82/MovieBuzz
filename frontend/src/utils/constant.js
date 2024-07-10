@@ -1,4 +1,4 @@
-export const API_END_POINT = "https://server-netflix-yb.vercel.app";
+export const API_END_POINT = "https://server-moviebuzz-yb.vercel.app";
 
 export const options = {
   method: "GET",
