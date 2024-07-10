@@ -15,9 +15,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+// const corsOptions = {
+//   origin: process.env.FRONTEND_URL,
+//   credentials: true,
+// };
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  credentials: true,
+    origin: 'https://moviebuzz-yb.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: 'Content-Type,Authorization'
 };
 app.use(cors(corsOptions));
 
